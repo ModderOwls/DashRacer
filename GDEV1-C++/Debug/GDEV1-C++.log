@@ -1,0 +1,100 @@
+﻿  Collider.cpp
+  DrawObject.cpp
+C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Components\DrawObject.cpp(13,61): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Components\DrawObject.cpp(13,38): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  EnemyCar.cpp
+C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\GameObjects\EnemyCar.cpp(77,21): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\GameObjects\EnemyCar.cpp(78,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\GameObjects\EnemyCar.cpp(79,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Player.cpp
+  GameRules.cpp
+  Main.cpp
+C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(53,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(134,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(156,81): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(156,57): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(157,87): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(157,59): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(180,81): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(180,57): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(181,87): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(181,59): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+  Rigidbody.cpp
+  Physics.cpp
+  Time.cpp
+  Object.cpp
+  Vector2.cpp
+  Generating Code...
+  GDEV1-C++.vcxproj -> C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\Debug\GDEV1-C++.exe
