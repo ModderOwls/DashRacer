@@ -1,7 +1,5 @@
 #include <iostream>
-#include <string> 
 
-#include "..\Variables/Vector2.h"
 #pragma once
 
 

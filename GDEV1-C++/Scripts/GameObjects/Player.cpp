@@ -39,7 +39,10 @@ void Player::tickUpdate()
 	invulnerable++;
 	castCollider(*this);
 
+	//Sideways movement through input.
 	Rigidbody::addForce(Vector2(0.9f * inputHorizontal, 0));
+	
+	//Friction.
 	if (inputHorizontal == 0) {
 		Rigidbody::velocity.x *= 0.7f;
 	}
@@ -58,6 +61,7 @@ void Player::tickUpdate()
 		}
 	} 
 
+	//Keep player in bounds so they dont go off-road.
 	if (Rigidbody::tickPosition.x < 204) {
 		Rigidbody::tickPosition.x = 204;
 		Rigidbody::velocity.x = 0;

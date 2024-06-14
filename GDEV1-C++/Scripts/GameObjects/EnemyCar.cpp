@@ -17,6 +17,7 @@ void EnemyCar::update()
 
 	DrawObject::update();
 
+	//if the car got hit will spin around out of control!
 	if (hit) 
 	{
 		DrawObject::sprite.rotate(480*deltaTime.asSeconds());
@@ -32,7 +33,7 @@ void EnemyCar::tickUpdate()
 	DrawObject::tickUpdate();
 	Collider::position = Rigidbody::tickPosition;
 
-
+	//Keep Enemy in bound as to not go off-road.
 	if (Rigidbody::tickPosition.x < 230) {
 		Rigidbody::tickPosition.x = 230;
 		Rigidbody::velocity.x *= -1;
@@ -62,10 +63,9 @@ void EnemyCar::tickUpdate()
 	}
 }
 
+//Reset the car to as new.
 void EnemyCar::ResetCar() 
 {
-	//castCollider(*this);
-	
 	DrawObject::sprite.setRotation(0);
 
 	hit = false;

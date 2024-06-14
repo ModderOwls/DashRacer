@@ -1,4 +1,4 @@
-﻿  Rigidbody.cpp
+﻿  Object.cpp
   EnemyCar.cpp
 C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\GameObjects\EnemyCar.cpp(73,21): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\GameObjects\EnemyCar.cpp(74,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
@@ -80,8 +80,8 @@ C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cp
               T=float
           ]
   Generating code
-  25 of 411 functions ( 6.1%) were compiled, the rest were copied from previous compilation.
-    3 functions were new in current compilation
-    12 functions had inline decision re-evaluated but remain unchanged
+  0 of 411 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   GDEV1-C++.vcxproj -> C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\Release\GDEV1-C++.exe

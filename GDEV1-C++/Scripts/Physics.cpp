@@ -3,6 +3,7 @@
 
 vector<shared_ptr<Collider>> colliders;
 
+//Compare all colliders and check for collision.
 void castCollider(Collider& collider)
 {
     for (unsigned int i = 0; i < colliders.size(); ++i) {
