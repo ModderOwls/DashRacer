@@ -1,7 +1,7 @@
 #include "Physics.h"
 
 
-vector<shared_ptr<Collider>> colliders;
+std::vector<std::shared_ptr<Collider>> colliders;
 
 //Compare all colliders and check for collision.
 void castCollider(Collider& collider)

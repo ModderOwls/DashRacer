@@ -1,8 +1,5 @@
-#include <iostream>
-
-#include "Time.h"
-
 #pragma once
+
 
 extern int points;
 extern int pointsRequired;

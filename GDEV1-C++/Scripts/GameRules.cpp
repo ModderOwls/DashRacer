@@ -1,6 +1,7 @@
 #include "GameRules.h"
 
-#pragma once
+#include "Time.h"
+
 
 int points = 0;
 int pointsRequired = 25;

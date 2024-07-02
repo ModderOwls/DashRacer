@@ -1,8 +1,6 @@
-#include <iostream>
-#include <cassert>
-#include <cmath>
-
 #include "Vector2.h"
+
+#include <iostream>
 
 
 Vector2::Vector2() 

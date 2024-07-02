@@ -1,6 +1,14 @@
 #include "Player.h"
 
-#pragma once
+#include "../Time.h"
+#include "../Physics.h"
+#include "../GameRules.h"
+
+#include "../Variables/Vector2.h"
+
+#include <SFML/Graphics/Texture.hpp>
+#include <SFML/Window.hpp>
+
 
 int inputHorizontal;
 int health;

@@ -1,5 +1,8 @@
 #include "Rigidbody.h"
 
+#include "../Time.h"
+
+
 Rigidbody::Rigidbody() 
 {
 	position = Vector2();

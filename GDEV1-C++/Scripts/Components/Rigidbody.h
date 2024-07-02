@@ -1,10 +1,6 @@
-#include <iostream>
-
-#include "..\Time.h"
-
-#include "..\Variables/Vector2.h"
-
 #pragma once
+
+#include "../Variables/Vector2.h"
 
 
 class Rigidbody {

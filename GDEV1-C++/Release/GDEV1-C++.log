@@ -1,13 +1,14 @@
-﻿  Object.cpp
+﻿  Rigidbody.cpp
   EnemyCar.cpp
-C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\GameObjects\EnemyCar.cpp(73,21): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\GameObjects\EnemyCar.cpp(74,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\GameObjects\EnemyCar.cpp(75,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Programming\DashRacer\GDEV1-C++\Scripts\GameObjects\EnemyCar.cpp(84,21): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+D:\Programming\DashRacer\GDEV1-C++\Scripts\GameObjects\EnemyCar.cpp(85,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Programming\DashRacer\GDEV1-C++\Scripts\GameObjects\EnemyCar.cpp(86,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Player.cpp
+  GameRules.cpp
   Main.cpp
-C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(53,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(134,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(156,81): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+D:\Programming\DashRacer\GDEV1-C++\Scripts\Main.cpp(49,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Programming\DashRacer\GDEV1-C++\Scripts\Main.cpp(130,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+D:\Programming\DashRacer\GDEV1-C++\Scripts\Main.cpp(152,81): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -16,7 +17,7 @@ C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cp
           [
               T=float
           ]
-C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(156,57): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+D:\Programming\DashRacer\GDEV1-C++\Scripts\Main.cpp(152,57): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -25,7 +26,7 @@ C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cp
           [
               T=float
           ]
-C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(157,87): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+D:\Programming\DashRacer\GDEV1-C++\Scripts\Main.cpp(153,87): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -34,7 +35,7 @@ C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cp
           [
               T=float
           ]
-C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(157,59): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+D:\Programming\DashRacer\GDEV1-C++\Scripts\Main.cpp(153,59): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -43,7 +44,7 @@ C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cp
           [
               T=float
           ]
-C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(180,81): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+D:\Programming\DashRacer\GDEV1-C++\Scripts\Main.cpp(176,81): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -52,7 +53,7 @@ C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cp
           [
               T=float
           ]
-C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(180,57): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+D:\Programming\DashRacer\GDEV1-C++\Scripts\Main.cpp(176,57): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -61,7 +62,7 @@ C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cp
           [
               T=float
           ]
-C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(181,87): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+D:\Programming\DashRacer\GDEV1-C++\Scripts\Main.cpp(177,87): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -70,7 +71,7 @@ C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cp
           [
               T=float
           ]
-C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cpp(181,59): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+D:\Programming\DashRacer\GDEV1-C++\Scripts\Main.cpp(177,59): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -79,9 +80,9 @@ C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\GDEV1-C++\Scripts\Main.cp
           [
               T=float
           ]
+  Time.cpp
   Generating code
-  0 of 411 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  Compiler switch has changed, fall back to full compilation.
+  All 411 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
-  GDEV1-C++.vcxproj -> C:\Users\Gebruiker\Documents\School\C++\GDev\GDEV1-C++\Release\GDEV1-C++.exe
+  GDEV1-C++.vcxproj -> D:\Programming\DashRacer\Release\GDEV1-C++.exe

@@ -1,7 +1,7 @@
-#include <iostream>
+#pragma once
 
 #include <SFML/System/Clock.hpp>
-#pragma once
+
 
 extern sf::Clock updateClock;
 extern sf::Time deltaTime;

@@ -1,5 +1,16 @@
 #include "EnemyCar.h"
 
+#include <random>
+
+#include "../Time.h"
+#include "../Physics.h"
+#include "../GameRules.h"
+
+#include "../Variables/Vector2.h"
+
+#include <SFML/Graphics/Texture.hpp>
+
+
 EnemyCar::EnemyCar()
 {
 	DrawObject::setTexture("Sprites/CarEnemy.png");

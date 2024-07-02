@@ -1,9 +1,7 @@
 #include <iostream>
 #include <vector>
-#include <random>
 
 #include <SFML/Graphics.hpp>
-#include <SFML/Graphics/Sprite.hpp>
 
 #include "Time.h"
 #include "Physics.h"
@@ -11,8 +9,6 @@
 
 #include "Variables/Vector2.h"
 #include "Components/Object.h"
-#include "Components/Rigidbody.h"
-#include "Components/Collider.h"
 
 #include "GameObjects/Player.h"
 #include "GameObjects/EnemyCar.h"
