@@ -3,7 +3,6 @@
 #include <random>
 
 #include "../Time.h"
-#include "../Physics.h"
 #include "../GameRules.h"
 
 #include "../Variables/Vector2.h"
@@ -31,7 +30,8 @@ void EnemyCar::update()
 	//if the car got hit will spin around out of control!
 	if (hit) 
 	{
-		DrawObject::sprite.rotate(480*deltaTime.asSeconds());
+		Time& instanceTime = Time::getInstance();
+		DrawObject::sprite.rotate(480* instanceTime.deltaTime.asSeconds());
 	} else
 	{
 		DrawObject::sprite.setRotation(Rigidbody::velocity.x * 2);
@@ -64,19 +64,23 @@ void EnemyCar::tickUpdate()
 	}
 	else 
 	{
+		GameRules& instanceGameRules = GameRules::getInstance();
+
 		//The enemy car has reached the bottom meaning you have evaded them!
 		if (Rigidbody::tickPosition.y > 530) {
 			ResetCar();
-			addPoints(1);
+			instanceGameRules.addPoints(1);
 		}
 
-		Rigidbody::velocity = Vector2(Rigidbody::velocity.x, speed * carSpeed);
+		Rigidbody::velocity = Vector2(Rigidbody::velocity.x, speed * instanceGameRules.carSpeed);
 	}
 }
 
 //Reset the car to as new.
 void EnemyCar::ResetCar() 
 {
+	GameRules& instanceGameRules = GameRules::getInstance();
+
 	DrawObject::sprite.setRotation(0);
 
 	hit = false;
@@ -84,7 +88,7 @@ void EnemyCar::ResetCar()
 	float randomSpeedX = rand() % 5 - 2;
 	speed = rand() % 5 + 4;
 	Rigidbody::setPosition(Vector2(243 + 128 * random, -60));
-	Rigidbody::setForce(Vector2(randomSpeedX, speed * carSpeed));
+	Rigidbody::setForce(Vector2(randomSpeedX, speed * instanceGameRules.carSpeed));
 }
 
 void EnemyCar::onCollision(const Collider& collider)

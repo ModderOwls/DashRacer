@@ -28,16 +28,17 @@ sf::Text textEnd;
 sf::Text textPress;
 sf::Font font;
 
-void HandleBackground();
-void HandleUI();
-void HandleWin();
-void HandleLose();
 
-void CallUpdate();
-void CallTickUpdate();
-void DrawSprites();
+void handleBackground();
+void handleUI();
+void handleWin();
+void handleLose();
 
-void StartGame();
+void callUpdate();
+void callTickUpdate();
+void drawSprites();
+
+void startGame();
 
 
 int main()
@@ -66,9 +67,13 @@ int main()
     background.setTexture(backgroundTexture);
     background.setTextureRect(sf::IntRect(0, 0, 854, 528));
 
-    InitializeClock();
 
-    StartGame();
+    Time& instanceTime = Time::getInstance();
+    GameRules& instanceGameRules = GameRules::getInstance();
+
+    instanceTime.initializeClock();
+
+    startGame();
 
     while (window.isOpen())
     {
@@ -82,33 +87,32 @@ int main()
         window.clear();
 
 
-        RestartClock();
+        instanceTime.restartClock();
 
-        HandleBackground();
+        handleBackground();
 
-
-        if (won) 
+        if (instanceGameRules.won)
         {
-            HandleWin();
+            handleWin();
         }
-        if (lose) 
+        if (instanceGameRules.lose)
         {
-            HandleLose();
+            handleLose();
         }
 
 
-        HandleUI();
+        handleUI();
 
-        CallUpdate();
-        DrawSprites();
+        callUpdate();
+        drawSprites();
 
         //Tick/fixed update loop. Waits for time to pass and does it multiple times if required.
         //This way differing framerates dont impact the game without resorting to capping framerate.
-        while (waitForTicks > tickRate)
+        while (instanceTime.waitForTicks > instanceTime.tickRate)
         {
-            CallTickUpdate();
+            callTickUpdate();
 
-            waitForTicks -= tickRate;
+            instanceTime.waitForTicks -= instanceTime.tickRate;
         }
 
         window.display();
@@ -119,10 +123,12 @@ int main()
 
 #pragma region Handlers
 
-void HandleBackground() 
+void handleBackground() 
 {
+    Time& instanceTime = Time::getInstance();
+    GameRules& instanceGameRules = GameRules::getInstance();
     float positionY = background.getPosition().y;
-    float speedModifier = deltaTime.asSeconds() * 500 * carSpeed;
+    float speedModifier = instanceTime.deltaTime.asSeconds() * 500 * instanceGameRules.carSpeed;
 
     background.setPosition(0, positionY + speedModifier);
     if (positionY - speedModifier > 0)
@@ -133,14 +139,15 @@ void HandleBackground()
     window.draw(background);
 }
 
-void HandleUI()
+void handleUI()
 {
-    textScore.setString("  SCORE\n  " + to_string(points));
+    GameRules& instanceGameRules = GameRules::getInstance();
+    textScore.setString("  SCORE\n  " + to_string(instanceGameRules.points));
 
     window.draw(textScore);
 }
 
-void HandleWin() 
+void handleWin() 
 {
     textEnd.setString("YOU   WIN!");
     textPress.setString("Press  both  arrow  keys  to  restart");
@@ -158,13 +165,14 @@ void HandleWin()
     int input = sf::Keyboard::isKeyPressed(sf::Keyboard::Scan::Right) + sf::Keyboard::isKeyPressed(sf::Keyboard::Scan::Left);
     if (input == 2) 
     {
-        StartGame();
+        startGame();
 
-        won = false;
+        GameRules& instanceGameRules = GameRules::getInstance();
+        instanceGameRules.won = false;
     }
 }
 
-void HandleLose()
+void handleLose()
 {
     textEnd.setString("YOU   LOSE");
     textPress.setString("Press  both  arrow  keys  to  restart");
@@ -182,9 +190,10 @@ void HandleLose()
     int input = sf::Keyboard::isKeyPressed(sf::Keyboard::Scan::Right) + sf::Keyboard::isKeyPressed(sf::Keyboard::Scan::Left);
     if (input == 2)
     {
-        StartGame();
+        startGame();
 
-        lose = false;
+        GameRules& instanceGameRules = GameRules::getInstance();
+        instanceGameRules.lose = false;
     }
 }
 
@@ -194,7 +203,7 @@ void HandleLose()
 #pragma region Calls
 
 //Calls Update to all Objects attached to the objects vector.
-void CallUpdate()
+void callUpdate()
 {
     for (unsigned int i = 0; i < objects.size(); ++i) {
         objects.at(i)->update();
@@ -202,14 +211,14 @@ void CallUpdate()
 }
 
 //See above, but for ticked updates.
-void CallTickUpdate() 
+void callTickUpdate() 
 {
     for (unsigned int i = 0; i < objects.size(); ++i) {
         objects.at(i)->tickUpdate();
     }
 }
 
-void DrawSprites() 
+void drawSprites() 
 {
     for (unsigned int i = 0; i < sprites.size(); ++i) {
         window.draw(sprites.at(i)->sprite);
@@ -219,27 +228,32 @@ void DrawSprites()
 #pragma endregion
 
 
-void StartGame()
+void startGame()
 {
     objects.clear();
     sprites.clear();
-    colliders.clear();
 
-    timeScale = 1;
-    points = 0;
+    Physics& instancePhysics = Physics::getInstance();
+    instancePhysics.colliders.clear();
+
+    Time& instanceTime = Time::getInstance();
+    instanceTime.timeScale = 1;
+
+    GameRules& instanceGameRules = GameRules::getInstance();
+    instanceGameRules.points = 0;
 
     shared_ptr<Player> player = make_shared<Player>();
     objects.push_back(player);
     sprites.push_back(player);
-    colliders.push_back(player);
+    instancePhysics.colliders.push_back(player);
 
     shared_ptr<EnemyCar> enemy1 = make_shared<EnemyCar>();
     objects.push_back(enemy1);
     sprites.push_back(enemy1);
-    colliders.push_back(enemy1);
+    instancePhysics.colliders.push_back(enemy1);
 
     shared_ptr<EnemyCar> enemy2 = make_shared<EnemyCar>();
     objects.push_back(enemy2);
     sprites.push_back(enemy2);
-    colliders.push_back(enemy2);
+    instancePhysics.colliders.push_back(enemy2);
 }

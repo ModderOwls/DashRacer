@@ -6,6 +6,18 @@
 #include "Components/Collider.h"
 
 
-extern std::vector<std::shared_ptr<Collider>> colliders;
+class Physics {
+private:
+	Physics();
 
-extern void castCollider(Collider& collider);
+public:
+	Physics(Physics const&) = delete;
+	void operator=(Physics const&) = delete;
+
+	static Physics& getInstance();
+
+
+	std::vector<std::shared_ptr<Collider>> colliders;
+
+	void castCollider(Collider& collider);
+};

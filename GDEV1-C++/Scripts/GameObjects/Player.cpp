@@ -45,7 +45,9 @@ void Player::tickUpdate()
 	inputHorizontal = sf::Keyboard::isKeyPressed(sf::Keyboard::Scan::Right) - sf::Keyboard::isKeyPressed(sf::Keyboard::Scan::Left);
 
 	invulnerable++;
-	castCollider(*this);
+
+	Physics& instancePhysics = Physics::getInstance();
+	instancePhysics.castCollider(*this);
 
 	//Sideways movement through input.
 	Rigidbody::addForce(Vector2(0.9f * inputHorizontal, 0));
@@ -58,14 +60,15 @@ void Player::tickUpdate()
 		Rigidbody::velocity.x *= 0.92f;
 	}
 
-	if (carSpeed < 1)
+	GameRules& instanceGameRules = GameRules::getInstance();
+	if (instanceGameRules.carSpeed < 1)
 	{
-		carSpeed += 0.015f;
+		instanceGameRules.carSpeed += 0.015f;
 
 		//Ensure speed doesnt go above 1.
-		if (carSpeed > 1) 
+		if (instanceGameRules.carSpeed > 1)
 		{
-			carSpeed = 1;
+			instanceGameRules.carSpeed = 1;
 		}
 	} 
 
@@ -84,17 +87,20 @@ void Player::onCollision(const Collider& collider)
 {
 	if (invulnerable > 0) 
 	{
-		carSpeed = 0;
+		GameRules& instanceGameRules = GameRules::getInstance();
+
+		instanceGameRules.carSpeed = 0;
 		--health;
 
 		invulnerable = -50;
 
 		if (health <= 0) 
 		{
-			won = false;
-			lose = true;
+			instanceGameRules.won = false;
+			instanceGameRules.lose = true;
 
-			timeScale = 0.0f;
+			Time& instanceTime = Time::getInstance();
+			instanceTime.timeScale = 0.0f;
 		}
 	}
 }

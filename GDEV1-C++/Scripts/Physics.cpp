@@ -1,10 +1,15 @@
 #include "Physics.h"
 
 
-std::vector<std::shared_ptr<Collider>> colliders;
+Physics::Physics() {}
+
+Physics& Physics::getInstance() {
+    static Physics instance;
+    return instance;
+}
 
 //Compare all colliders and check for collision.
-void castCollider(Collider& collider)
+void Physics::castCollider(Collider& collider)
 {
     for (unsigned int i = 0; i < colliders.size(); ++i) {
         Collider& c = *colliders.at(i);

@@ -1,11 +1,23 @@
 #pragma once
 
 
-extern int points;
-extern int pointsRequired;
-extern float carSpeed;
+class GameRules {
+private:
+	GameRules();
 
-extern bool won;
-extern bool lose;
+public:
+	GameRules(GameRules const&) = delete;
+	void operator=(GameRules const&) = delete;
 
-extern void addPoints(const int amount);
+	static GameRules& getInstance();
+
+
+	int points = 0;
+	int pointsRequired = 25;
+	float carSpeed = 1;
+
+	bool won;
+	bool lose;
+
+	void addPoints(const int amount);
+};

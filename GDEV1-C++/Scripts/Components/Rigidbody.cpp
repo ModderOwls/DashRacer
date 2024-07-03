@@ -12,14 +12,16 @@ Rigidbody::Rigidbody()
 
 void Rigidbody::update()
 {
-	position = tickPosition.lerp(previousPosition, tickLerpValue);
+	Time& instanceTime = Time::getInstance();
+	position = tickPosition.lerp(previousPosition, instanceTime.tickLerpValue);
 }
 
 void Rigidbody::tickUpdate()
 {
 	previousPosition = tickPosition;
 
-	tickPosition += velocity * timeScale;
+	Time& instanceTime = Time::getInstance();
+	tickPosition += velocity * instanceTime.timeScale;
 }
 
 void Rigidbody::setPosition(const Vector2& newPosition) {

@@ -3,15 +3,27 @@
 #include <SFML/System/Clock.hpp>
 
 
-extern sf::Clock updateClock;
-extern sf::Time deltaTime;
-extern float timePassed;
-extern float timeScale;
+class Time {
+private:
+	Time();
 
-//How often ticks happen. In microseconds, so every 20 milliseconds by default.
-extern const int tickRate;
-extern sf::Int64 waitForTicks;
-extern float tickLerpValue;
+public:
+	Time(Time const&) = delete;
+	void operator=(Time const&) = delete;
 
-extern void InitializeClock();
-extern void RestartClock();
+	static Time& getInstance();
+
+
+	void initializeClock();
+	void restartClock();
+
+	sf::Clock updateClock;
+	sf::Time deltaTime;
+	float timePassed;
+	float timeScale;
+
+	//How often ticks happen. In microseconds, so every 20 milliseconds by default.
+	const int tickRate = 20000;
+	sf::Int64 waitForTicks;
+	float tickLerpValue;
+};

@@ -1,17 +1,16 @@
 #include "Time.h"
 
+#include <iostream>
 
-sf::Clock updateClock;
-sf::Time deltaTime;
-float timePassed;
-float timeScale = 1;
 
-//How often ticks happen. In microseconds, so every 20 milliseconds by default.
-const int tickRate = 20000;
-sf::Int64 waitForTicks;
-float tickLerpValue;
+Time::Time() {}
 
-void InitializeClock()
+Time& Time::getInstance() {
+	static Time instance;
+	return instance;
+}
+
+void Time::initializeClock()
 {
 	updateClock = sf::Clock();
 	deltaTime = updateClock.restart();
@@ -21,7 +20,7 @@ void InitializeClock()
 	waitForTicks = 0;
 }
 
-void RestartClock()
+void Time::restartClock()
 {
 	deltaTime = updateClock.restart() * timeScale;
 

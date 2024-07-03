@@ -3,14 +3,14 @@
 #include "Time.h"
 
 
-int points = 0;
-int pointsRequired = 25;
-float carSpeed = 1;
+GameRules::GameRules() {}
 
-bool won;
-bool lose;
+GameRules& GameRules::getInstance() {
+	static GameRules instance;
+	return instance;
+}
 
-void addPoints(const int amount) 
+void GameRules::addPoints(const int amount) 
 {
 	points += amount;
 
@@ -19,6 +19,7 @@ void addPoints(const int amount)
 		won = true;
 		lose = false;
 
-		timeScale = 0.0f;
+		Time& instanceTime = Time::getInstance();
+		instanceTime.timeScale = 0.0f;
 	}
 }
